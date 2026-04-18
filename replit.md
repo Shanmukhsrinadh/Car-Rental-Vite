@@ -1,27 +1,46 @@
-# Workspace
+# Car Rental Template
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+A pure Vite + React frontend project — no fullstack setup, no backend, no database. Clean for GitHub just like a standalone Vite project.
 
 ## Stack
 
-- **Monorepo tool**: pnpm workspaces
-- **Node.js version**: 24
-- **Package manager**: pnpm
-- **TypeScript version**: 5.9
-- **API framework**: Express 5
-- **Database**: PostgreSQL + Drizzle ORM
-- **Validation**: Zod (`zod/v4`), `drizzle-zod`
-- **API codegen**: Orval (from OpenAPI spec)
-- **Build**: esbuild (CJS bundle)
+- **Framework**: React 19 + Vite 6
+- **Styling**: Tailwind CSS v4
+- **UI Components**: Radix UI + shadcn/ui
+- **Routing**: Wouter
+- **Animations**: Framer Motion
+- **State**: TanStack React Query (client-side only)
+- **Forms**: React Hook Form + Zod
+- **TypeScript**: 5.8
 
 ## Key Commands
 
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- `pnpm --filter @workspace/api-server run dev` — run API server locally
+- `pnpm --filter @workspace/car-rental-template run dev` — run locally in Replit
+- `npm run dev` — run standalone (after cloning from GitHub)
+- `npm run build` — build for production
+- `npm run preview` — preview production build
 
-See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+## Git / GitHub
+
+The `.gitignore` is configured to exclude all Replit monorepo boilerplate. When pushed to GitHub, only `artifacts/car-rental-template/` contents are visible — just Vite config, package.json, src/, public/, etc. No server, no lib, no scripts.
+
+## Project Structure
+
+```
+artifacts/car-rental-template/
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   ├── components/ui/   # shadcn/ui components
+│   ├── pages/
+│   ├── hooks/
+│   └── lib/
+├── public/
+├── index.html
+├── package.json
+├── vite.config.ts
+└── tsconfig.json
+```

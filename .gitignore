@@ -1,5 +1,3 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
 # compiled output
 dist
 tmp
@@ -44,6 +42,21 @@ Thumbs.db
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
-# Replit
+# Replit internal
 .cache/
 .local/
+.replit
+.replitignore
+.replit-artifact
+
+# Fullstack monorepo boilerplate (not part of the Car Rental Template)
+artifacts/api-server/
+artifacts/mockup-sandbox/
+lib/
+scripts/
+pnpm-workspace.yaml
+pnpm-lock.yaml
+tsconfig.base.json
+tsconfig.json
+.npmrc
+attached_assets/
