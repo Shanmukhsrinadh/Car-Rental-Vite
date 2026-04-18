@@ -5,6 +5,7 @@ import path from "path";
 // For GitHub Pages: set base to your repo name, e.g. base: "/Car-Rental-Vite/"
 // For custom domain or root deployment: keep base: "/"
 export default defineConfig({
+  base: "/Car-Rental-Vite/",
   plugins: [react()],
   resolve: {
     alias: {
