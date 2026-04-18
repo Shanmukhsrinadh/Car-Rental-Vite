@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ── DARK THEME ── */
+:root {
+  /* Dark automotive / night-drive theme */
+  --background: 220 18% 8%;          /* near-black with blue tint */
+  --foreground: 210 20% 92%;
+
+  --card: 220 16% 11%;               /* slightly lighter dark */
+  --card-foreground: 210 20% 92%;
+
+  --primary: 45 95% 55%;             /* gold / amber */
+  --primary-foreground: 220 18% 8%;
+
+  --secondary: 220 14% 18%;
+  --secondary-foreground: 210 20% 80%;
+
+  --muted: 220 14% 15%;
+  --muted-foreground: 210 10% 55%;
+
+  --accent: 220 14% 18%;
+  --accent-foreground: 210 20% 92%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 14% 18%;
+  --input: 220 14% 18%;
+  --ring: 45 95% 55%;
+
+  --radius: 0.75rem;
+
+  --app-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --app-font-mono: 'Fira Code', 'Consolas', monospace;
+}
+
+/* Force dark always — this is a dark-mode-only template */
+html {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--app-font-sans);
+  }
+
+  ::selection {
+    background: hsl(45 95% 55% / 0.3);
+    color: white;
+  }
+
+  html {
+    scroll-behavior: auto; /* handled by SmoothScroll component */
+  }
+}
+
+/* ── CUSTOM UTILITIES ── */
+@layer utilities {
+
+  /* Glass morphism panels */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Gold gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f5d060 0%, #e5b100 50%, #c8860a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Testimonials scroll animation */
+  @keyframes testimonial-scroll {
+    to {
+      transform: translate(calc(-50% - 0.75rem));
+    }
+  }
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 18% 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(45 95% 55% / 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(45 95% 55% / 0.7);
+}

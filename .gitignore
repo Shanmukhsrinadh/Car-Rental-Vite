@@ -1,62 +1,42 @@
-# compiled output
-dist
-tmp
-out-tsc
+# Build output
+dist/
+dist-ssr/
 *.tsbuildinfo
-.expo
-.expo-shared
 
-# dependencies
-node_modules
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
+.idea
+*.suo
+*.njsproj
+*.sln
+*.sw?
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# OS
 .DS_Store
 Thumbs.db
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
-
-# Replit internal
-.cache/
-.local/
-.replit
-.replitignore
-.replit-artifact
-
-# Fullstack monorepo boilerplate (not part of the Car Rental Template)
-artifacts/api-server/
-artifacts/mockup-sandbox/
+# ─── Replit monorepo infrastructure (not part of the Car Rental Template) ────
+artifacts/
 lib/
 scripts/
 pnpm-workspace.yaml
 pnpm-lock.yaml
 tsconfig.base.json
-tsconfig.json
 .npmrc
+.replit
+.replitignore
+replit.md
 attached_assets/
+.cache/
+.local/
+.agents/
+tmp/
